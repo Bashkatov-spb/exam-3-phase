@@ -4,7 +4,7 @@ function Btn({ onHandleChangeShow }: { onHandleChangeShow: () => void }): JSX.El
   return (
     <h4>
       <button type="button" onClick={onHandleChangeShow}>
-        Show window
+        Show or Hide Window
       </button>
     </h4>
   );

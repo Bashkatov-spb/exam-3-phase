@@ -16,7 +16,7 @@ function App(): JSX.Element {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         {show && <Modal onHandleChangeShow={onHandleChangeShow} />}
-        {!show && <Btn onHandleChangeShow={onHandleChangeShow} />}
+        <Btn onHandleChangeShow={onHandleChangeShow} />
         <h3>Modal window</h3>
       </header>
     </div>
