@@ -1,13 +1,13 @@
 import React from 'react';
 
 function Inpt({
-  step,
-  onHandleChangeStep,
+  text,
+  onHandleChangeText,
 }: {
-  step: number;
-  onHandleChangeStep: (value: React.ChangeEvent<HTMLInputElement>) => void;
+  text: string;
+  onHandleChangeText: (value: React.ChangeEvent<HTMLInputElement>) => void;
 }): JSX.Element {
-  return <input type="number" value={step} onChange={onHandleChangeStep} />;
+  return <input type="text" value={text} onChange={onHandleChangeText} />;
 }
 
 export default Inpt;
