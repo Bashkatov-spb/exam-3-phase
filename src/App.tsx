@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Inpt from './Inpt';
 import Btn from './Btn';
+import Modal from './Modal';
 
 function App(): JSX.Element {
-  const [text, setText] = useState('');
+  const [show, setShow] = useState(false);
 
-  const onHandleChangeText = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setText(e.target.value);
-  };
-
-  const onHandleAddExMark = (): void => {
-    setText(`${text}!`);
+  const onHandleChangeShow = (): void => {
+    setShow((prev) => !prev);
   };
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h3>{text}</h3>
-        <Inpt text={text} onHandleChangeText={onHandleChangeText} />
-        <Btn onHandleAddExMark={onHandleAddExMark} />
-        <h3>Parrot</h3>
+        {show && <Modal onHandleChangeShow={onHandleChangeShow} />}
+        {!show && <Btn onHandleChangeShow={onHandleChangeShow} />}
+        <h3>Modal window</h3>
       </header>
     </div>
   );

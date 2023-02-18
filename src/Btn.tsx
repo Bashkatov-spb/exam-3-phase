@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Btn({ onHandleAddExMark }: { onHandleAddExMark: () => void }): JSX.Element {
+function Btn({ onHandleChangeShow }: { onHandleChangeShow: () => void }): JSX.Element {
   return (
     <h4>
-      <button type="button" onClick={onHandleAddExMark}>
-        Add !
+      <button type="button" onClick={onHandleChangeShow}>
+        Show window
       </button>
     </h4>
   );
