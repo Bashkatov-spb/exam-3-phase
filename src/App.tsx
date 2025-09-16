@@ -4,8 +4,11 @@ import './App.css';
 import Inpt from './Inpt';
 import Btn from './Btn';
 import Calculator from './Calculator';
+import TodoApp from './TodoApp';
+import WeatherWidget from './WeatherWidget';
+import TimerApp from './TimerApp';
 
-type TaskType = 'parrot' | 'calculator';
+type TaskType = 'parrot' | 'calculator' | 'todo' | 'weather' | 'timer';
 
 function App(): JSX.Element {
   const [text, setText] = useState('');
@@ -37,6 +40,24 @@ function App(): JSX.Element {
             <Calculator />
           </div>
         );
+      case 'todo':
+        return (
+          <div className="task-container">
+            <TodoApp />
+          </div>
+        );
+      case 'weather':
+        return (
+          <div className="task-container">
+            <WeatherWidget />
+          </div>
+        );
+      case 'timer':
+        return (
+          <div className="task-container">
+            <TimerApp />
+          </div>
+        );
       default:
         return <div>Выберите задание</div>;
     }
@@ -52,13 +73,31 @@ function App(): JSX.Element {
             className={`task-button ${currentTask === 'parrot' ? 'active' : ''}`}
             onClick={() => setCurrentTask('parrot')}
           >
-            Попугай
+            🦜 Попугай
           </button>
           <button 
             className={`task-button ${currentTask === 'calculator' ? 'active' : ''}`}
             onClick={() => setCurrentTask('calculator')}
           >
-            Калькулятор
+            🧮 Калькулятор
+          </button>
+          <button 
+            className={`task-button ${currentTask === 'todo' ? 'active' : ''}`}
+            onClick={() => setCurrentTask('todo')}
+          >
+            ✅ Список дел
+          </button>
+          <button 
+            className={`task-button ${currentTask === 'weather' ? 'active' : ''}`}
+            onClick={() => setCurrentTask('weather')}
+          >
+            🌤️ Погода
+          </button>
+          <button 
+            className={`task-button ${currentTask === 'timer' ? 'active' : ''}`}
+            onClick={() => setCurrentTask('timer')}
+          >
+            ⏱️ Таймер
           </button>
         </div>
 

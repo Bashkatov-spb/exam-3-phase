@@ -186,3 +186,4 @@ const Calculator: React.FC = (): JSX.Element => {
 };
 
 export default Calculator;
+

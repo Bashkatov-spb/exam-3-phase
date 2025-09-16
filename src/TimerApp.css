@@ -1,0 +1,242 @@
+.timer-app {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+}
+
+.timer-header h2 {
+  margin: 0 0 20px 0;
+  font-size: 28px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timer-mode-selector {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.mode-button {
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mode-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.mode-button.active {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #667eea;
+  border-color: white;
+}
+
+.countdown-settings {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.countdown-settings h3 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+}
+
+.time-inputs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.time-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-input-group label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.time-input {
+  width: 80px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.time-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.timer-display {
+  margin-bottom: 30px;
+}
+
+.timer-time {
+  font-size: 72px;
+  font-weight: bold;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+
+.timer-time.time-up {
+  color: #ff6b6b;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.timer-progress {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.timer-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 120px;
+}
+
+.start-button {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.stop-button {
+  background: linear-gradient(45deg, #ff9800, #f57c00);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.stop-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+.reset-button {
+  background: linear-gradient(45deg, #f44336, #d32f2f);
+  color: white;
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+}
+
+.time-up-notification {
+  background-color: rgba(255, 107, 107, 0.2);
+  border: 2px solid #ff6b6b;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.time-up-notification h3 {
+  margin: 0 0 10px 0;
+  color: #ff6b6b;
+  font-size: 24px;
+}
+
+.time-up-notification p {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.timer-info {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: left;
+}
+
+.timer-info h4 {
+  margin: 0 0 15px 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+.timer-info ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.timer-info li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.timer-info strong {
+  color: #ffd700;
+}
