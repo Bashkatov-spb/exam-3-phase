@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Btn from './Btn';
+import Modal from './Modal';
 
-function App() {
+function App(): JSX.Element {
+  const [show, setShow] = useState(false);
+
+  const onHandleChangeShow = (): void => {
+    setShow((prev) => !prev);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {show && <Modal onHandleChangeShow={onHandleChangeShow} />}
+        <Btn onHandleChangeShow={onHandleChangeShow} />
+        <h3>Modal window</h3>
       </header>
     </div>
   );

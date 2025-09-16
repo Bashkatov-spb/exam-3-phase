@@ -1,5 +1,5 @@
 {
-  "name": "lastexam",
+  "name": "exam",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,8 +25,53 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "airbnb",
+      "airbnb-typescript"
+    ],
+    "rules": {
+      "jsx-a11y/interactive-supports-focus": 0,
+      "jsx-a11y/control-has-associated-label": 0,
+      "react/jsx-indent": 0,
+      "implicit-arrow-linebreak": 0,
+      "@typescript-eslint/indent": 0,
+      "@typescript-eslint/comma-dangle": 0,
+      "function-paren-newline": 0,
+      "no-param-reassign": 0,
+      "no-nested-ternary": 0,
+      "no-confusing-arrow": 0,
+      "operator-linebreak": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "jsx-a11y/label-has-associated-control": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "default-case": 0,
+      "@typescript-eslint/default-param-last": 0,
+      "@typescript-eslint/switch-exhaustiveness-check": 2,
+      "@typescript-eslint/explicit-function-return-type": [
+        2,
+        {
+          "allowExpressions": true,
+          "allowTypedFunctionExpressions": true,
+          "allowHigherOrderFunctions": true,
+          "allowDirectConstAssertionInArrowFunctions": true
+        }
+      ],
+      "no-await-in-loop": 0,
+      "@typescript-eslint/consistent-type-definitions": [
+        "error",
+        "interface"
+      ],
+      "consistent-return": 0,
+      "object-curly-newline": 0,
+      "@typescript-eslint/no-use-before-define": 0,
+      "jsx-a11y/no-static-element-interactions": 0
+    },
+    "parserOptions": {
+      "project": [
+        "tsconfig.json"
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -39,5 +84,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-hooks": "^0.4.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2"
   }
 }
