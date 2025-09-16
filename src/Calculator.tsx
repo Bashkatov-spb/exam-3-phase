@@ -91,6 +91,10 @@ const Calculator: React.FC = (): JSX.Element => {
           throw new Error('Деление на ноль');
         }
         return firstValue / secondValue;
+      case '%':
+        return firstValue % secondValue;
+      case '^':
+        return Math.pow(firstValue, secondValue);
       default:
         return secondValue;
     }
@@ -137,6 +141,9 @@ const Calculator: React.FC = (): JSX.Element => {
         <button className="calculator-button calculator-button-operator" onClick={() => performOperation('-')}>
           −
         </button>
+        <button className="calculator-button calculator-button-operator" onClick={() => performOperation('%')}>
+          %
+        </button>
         
         <button className="calculator-button calculator-button-number" onClick={() => inputNumber('7')}>
           7
@@ -149,6 +156,9 @@ const Calculator: React.FC = (): JSX.Element => {
         </button>
         <button className="calculator-button calculator-button-operator" onClick={() => performOperation('+')}>
           +
+        </button>
+        <button className="calculator-button calculator-button-operator" onClick={() => performOperation('^')}>
+          x²
         </button>
         
         <button className="calculator-button calculator-button-number" onClick={() => inputNumber('4')}>

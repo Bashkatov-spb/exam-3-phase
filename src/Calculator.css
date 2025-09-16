@@ -26,8 +26,8 @@
 
 .calculator-buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
 }
 
 .calculator-button {
@@ -88,5 +88,9 @@
 
 .calculator-button-zero {
   grid-column: span 2;
+}
+
+.calculator-button-operator {
+  font-size: 16px;
 }
 
