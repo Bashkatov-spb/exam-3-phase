@@ -29,12 +29,14 @@ const TimerApp: React.FC = (): JSX.Element => {
     } else {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
+        intervalRef.current = null;
       }
     }
 
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
+        intervalRef.current = null;
       }
     };
   }, [isRunning, mode]);
@@ -52,6 +54,10 @@ const TimerApp: React.FC = (): JSX.Element => {
 
   const resetTimer = (): void => {
     setIsRunning(false);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
     if (mode === 'stopwatch') {
       setTime(0);
     } else {
